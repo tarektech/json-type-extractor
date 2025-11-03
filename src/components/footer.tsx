@@ -1,5 +1,9 @@
+'use client';
+
 import React from 'react';
 import { Github } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'motion/react';
 
 export default function Footer() {
   return (
@@ -17,16 +21,36 @@ export default function Footer() {
           </div>
 
           {/* GitHub Link */}
-          <a
-            href="https://github.com/tarektech"
+          <Link
+            href="https://github.com/tarektech/json-type-extractor"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors relative"
             aria-label="Visit GitHub profile"
           >
-            <Github className="h-5 w-5" />
-            <span>@tarektech</span>
-          </a>
+            <motion.div
+              className="absolute -inset-3 rounded-lg p-[2px]"
+              animate={{
+                background: [
+                  'linear-gradient(90deg, rgba(147, 51, 234, 0.5), rgba(59, 130, 246, 0.5))',
+                  'linear-gradient(180deg, rgba(59, 130, 246, 0.5), rgba(14, 165, 233, 0.5))',
+                  'linear-gradient(270deg, rgba(14, 165, 233, 0.5), rgba(6, 182, 212, 0.5))',
+                  'linear-gradient(360deg, rgba(6, 182, 212, 0.5), rgba(20, 184, 166, 0.5))',
+                  'linear-gradient(90deg, rgba(20, 184, 166, 0.5), rgba(147, 51, 234, 0.5))',
+                  'linear-gradient(90deg, rgba(147, 51, 234, 0.5), rgba(59, 130, 246, 0.5))',
+                ],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+            >
+              <div className="absolute inset-[2px] rounded-lg bg-background" />
+            </motion.div>
+            <Github className="h-5 w-5 relative z-10" />
+            <span className="relative z-10">@tarektech</span>
+          </Link>
 
           {/* Copyright and Rights */}
           <div className="text-center space-y-1">

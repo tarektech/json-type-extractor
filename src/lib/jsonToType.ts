@@ -244,3 +244,5 @@ function inferType(value: any): string {
       return 'any';
   }
 }
+
+

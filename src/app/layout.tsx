@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -24,20 +24,26 @@ export const metadata: Metadata = {
     'type converter',
     'developer tools',
     'interface generator',
+    'object to type',
+    'json to typescript',
+    'json to type',
+    'object converter',
+
   ],
-  authors: [{ name: 'Type Extractor' }],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
+  authors: [{ name: 'tarektech' }],
   openGraph: {
     title: 'Type Extractor - JSON to TypeScript Converter',
     description:
       'Instantly convert JSON objects into valid TypeScript type definitions',
     type: 'website',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
