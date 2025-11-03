@@ -15,6 +15,20 @@ interface ThemeTogglerDemoProps {
 
 export const ThemeButton = ({ direction }: ThemeTogglerDemoProps) => {
   const { theme, resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  // Prevent hydration mismatch by only rendering after mount
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <button className="cursor-pointer hover:text-primary transition-colors w-[24px] h-[24px]">
+        {/* Placeholder to maintain layout */}
+      </button>
+    );
+  }
 
   return (
     <ThemeToggler

@@ -15,6 +15,31 @@ interface TypeInfo {
 }
 
 /**
+ * Normalize JavaScript object notation to valid JSON
+ * Handles unquoted keys and converts them to quoted keys
+ */
+function normalizeToJson(input: string): string {
+  // Trim whitespace
+  let normalized = input.trim();
+
+  // Replace single quotes with double quotes (for string values)
+  // But be careful not to replace single quotes inside double-quoted strings
+  normalized = normalized.replace(/'([^']*)'/g, '"$1"');
+
+  // Handle unquoted keys: find patterns like word: (key followed by colon)
+  // This regex matches unquoted keys before colons
+  normalized = normalized.replace(
+    /([{,]\s*)([a-zA-Z_$][a-zA-Z0-9_$]*)(\s*:)/g,
+    '$1"$2"$3'
+  );
+
+  // Handle trailing commas (not valid in JSON)
+  normalized = normalized.replace(/,(\s*[}\]])/g, '$1');
+
+  return normalized;
+}
+
+/**
  * Main function to convert JSON string to TypeScript type
  */
 export function convertJsonToType(
@@ -22,8 +47,11 @@ export function convertJsonToType(
   typeName: string = 'RootType'
 ): ConversionResult {
   try {
+    // Normalize JavaScript object notation to valid JSON
+    const normalizedJson = normalizeToJson(jsonString);
+
     // Parse JSON
-    const parsedJson = JSON.parse(jsonString);
+    const parsedJson = JSON.parse(normalizedJson);
 
     // Generate type definition
     const typeDefinition = generateTypeDefinition(parsedJson, typeName, 0);
@@ -45,9 +73,11 @@ export function convertJsonToType(
  */
 export function formatJson(jsonString: string): string {
   try {
-    const parsed = JSON.parse(jsonString);
+    // Normalize before parsing
+    const normalizedJson = normalizeToJson(jsonString);
+    const parsed = JSON.parse(normalizedJson);
     return JSON.stringify(parsed, null, 2);
-  } catch (error) {
+  } catch {
     throw new Error('Invalid JSON format');
   }
 }
@@ -56,7 +86,7 @@ export function formatJson(jsonString: string): string {
  * Generate TypeScript type definition from parsed JSON
  */
 function generateTypeDefinition(
-  value: any,
+  value: unknown,
   typeName: string,
   depth: number
 ): string {
@@ -148,7 +178,7 @@ function generateTypeDefinition(
 /**
  * Get detailed type information including whether it's optional
  */
-function getDetailedType(value: any): TypeInfo {
+function getDetailedType(value: unknown): TypeInfo {
   if (value === null || value === undefined) {
     return { type: 'null', isOptional: false };
   }
@@ -184,7 +214,7 @@ function getDetailedType(value: any): TypeInfo {
 
   if (typeof value === 'object') {
     return {
-      type: generateInlineObjectType(value, 1),
+      type: generateInlineObjectType(value as Record<string, unknown>, 1),
       isOptional: false,
     };
   }
@@ -195,7 +225,10 @@ function getDetailedType(value: any): TypeInfo {
 /**
  * Generate inline object type for nested objects
  */
-function generateInlineObjectType(obj: any, depth: number): string {
+function generateInlineObjectType(
+  obj: Record<string, unknown>,
+  depth: number
+): string {
   const indent = '  '.repeat(depth);
   const innerIndent = '  '.repeat(depth + 1);
 
@@ -222,7 +255,7 @@ function generateInlineObjectType(obj: any, depth: number): string {
 /**
  * Infer TypeScript type from JavaScript value
  */
-function inferType(value: any): string {
+function inferType(value: unknown): string {
   if (value === null) return 'null';
   if (value === undefined) return 'undefined';
 
@@ -244,5 +277,3 @@ function inferType(value: any): string {
       return 'any';
   }
 }
-
-
