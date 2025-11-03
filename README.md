@@ -1,4 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JSON Type Extractor
+
+A Next.js web application that analyzes JSON data and automatically generates TypeScript type definitions. Perfect for developers who need to quickly create type-safe interfaces from JSON responses, API payloads, or configuration files.
+
+## Features
+
+- **Instant Type Generation**: Paste JSON and get TypeScript types immediately
+- **Smart Type Inference**: Automatically detects and handles:
+  - Nested objects and arrays
+  - Optional properties
+  - Union types
+  - Mixed types
+- **Clean Output**: Generates readable, properly formatted TypeScript interfaces
+- **Copy to Clipboard**: One-click copying of generated types
+- **Dark Mode Support**: Easy on the eyes for extended use
 
 ## Getting Started
 
