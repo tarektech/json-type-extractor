@@ -15,9 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Type Extractor - JSON to TypeScript Converter',
+  metadataBase: new URL('https://json-type-extractor.vercel.app'),
+  title: {
+    default: 'Type Extractor - JSON to TypeScript Converter | Free Online Tool',
+    template: '%s | Type Extractor',
+  },
   description:
-    'Instantly convert JSON objects into valid, formatted TypeScript interfaces and types. A lightweight developer tool for rapid type generation.',
+    'Free online tool to instantly convert JSON objects into valid, formatted TypeScript interfaces and types. A lightweight developer tool for rapid type generation with syntax highlighting and real-time conversion.',
   keywords: [
     'TypeScript',
     'JSON',
@@ -28,15 +32,75 @@ export const metadata: Metadata = {
     'json to typescript',
     'json to type',
     'object converter',
-
+    'typescript interface generator',
+    'json parser',
+    'online typescript tool',
+    'free typescript converter',
+    'typescript type definition',
+    'typescript utility',
+    'typescript generator',
+    'json schema to typescript',
+    'typescript interface',
+    'web developer tools',
+    'frontend development',
   ],
-  authors: [{ name: 'tarektech' }],
+  authors: [
+    { name: 'tarektech', url: 'https://json-type-extractor.vercel.app' },
+  ],
+  creator: 'tarektech',
+  publisher: 'tarektech',
+  category: 'technology',
+  applicationName: 'Type Extractor',
+  generator: 'Next.js',
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://json-type-extractor.vercel.app',
+    siteName: 'Type Extractor',
+    title: 'Type Extractor - JSON to TypeScript Converter | Free Online Tool',
+    description:
+      'Free online tool to instantly convert JSON objects into valid, formatted TypeScript interfaces and types. Real-time conversion with syntax highlighting.',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Type Extractor - Convert JSON to TypeScript Types',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Type Extractor - JSON to TypeScript Converter',
     description:
-      'Instantly convert JSON objects into valid TypeScript type definitions',
-    type: 'website',
+      'Free online tool to instantly convert JSON objects into valid TypeScript types. Real-time conversion with syntax highlighting.',
+    creator: '@tarektech',
+    images: ['/twitter-image.png'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
