@@ -4,6 +4,7 @@ import React from 'react';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
+// import CheckoutButton from './checkoutButton';
 
 export default function Footer() {
   return (
@@ -19,6 +20,9 @@ export default function Footer() {
               JSON to TypeScript Converter
             </p>
           </div>
+
+          {/* Checkout Button */}
+          {/* <CheckoutButton /> */}
 
           {/* GitHub Link */}
           <Link

@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@databuddy/sdk": "^2.2.1",
+    "@polar-sh/nextjs": "^0.7.0",
+    "@polar-sh/sdk": "^0.41.1",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-switch": "^1.2.6",
@@ -22,7 +25,9 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-syntax-highlighter": "^16.1.0",
-    "tailwind-merge": "^3.3.1"
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

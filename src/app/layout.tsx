@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ConvertTypeProvider } from '@/components/convertProvider';
+import ToasterWrapper from '@/components/toaster-wrapper';
+import { Databuddy } from '@databuddy/sdk/react';
+
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -128,6 +131,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ConvertTypeProvider>{children}</ConvertTypeProvider>
+          <ToasterWrapper />
+          <Databuddy />
         </ThemeProvider>
       </body>
     </html>
