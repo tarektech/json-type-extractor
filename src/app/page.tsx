@@ -1,9 +1,11 @@
+// import { Suspense } from 'react';
 import FeaturesSection from '@/components/features-section';
 import HeroSection from '@/components/hero-section';
 import Navbar from '@/components/navbar';
 import JsonInputSection from '@/components/jsonInputSection';
 import JsonOutputSection from '@/components/jsonOutputSection';
 import Footer from '@/components/footer';
+// import PurchaseSuccessHandler from '@/components/purchase-success-handler';
 
 export default function HomePage() {
   // JSON-LD structured data for SEO
@@ -48,6 +50,9 @@ export default function HomePage() {
           __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
         }}
       />
+      {/* <Suspense fallback={null}>
+        <PurchaseSuccessHandler />
+      </Suspense> */}
       <div className="min-h-screen bg-linear-to-br from-background via-background to-muted/20">
         {/* Header */}
         <Navbar />
