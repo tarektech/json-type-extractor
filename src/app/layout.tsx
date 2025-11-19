@@ -4,7 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ConvertTypeProvider } from '@/components/convertProvider';
 import ToasterWrapper from '@/components/toaster-wrapper';
-import { Databuddy } from '@databuddy/sdk/react';
+import { DataBuddyProvider } from '@/components/data-buddy-provider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -131,13 +131,7 @@ export default function RootLayout({
         >
           <ConvertTypeProvider>{children}</ConvertTypeProvider>
           <ToasterWrapper />
-          <Databuddy
-            clientId={process.env.DATABUDDY_CLIENT_ID!}
-            trackInteractions={true}
-            trackEngagement={true}
-            trackErrors={true}
-            enableBatching={true}
-          />
+          <DataBuddyProvider />
         </ThemeProvider>
       </body>
     </html>
