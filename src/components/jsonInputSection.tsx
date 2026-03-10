@@ -45,7 +45,7 @@ export default function JsonInputSection() {
             className="w-full sm:flex-1 gap-2"
             size="lg"
           >
-            <Wand2 className="size-4" />
+            <Wand2 className="size-4" aria-hidden="true" />
             Convert to Type
           </Button>
           <Button
@@ -54,7 +54,7 @@ export default function JsonInputSection() {
             className="w-full sm:w-auto gap-2"
             size="lg"
           >
-            <Code2 className="size-4" />
+            <Code2 className="size-4" aria-hidden="true" />
             Format JSON
           </Button>
         </div>

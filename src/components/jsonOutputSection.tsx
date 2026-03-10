@@ -46,13 +46,13 @@ export default function JsonOutputSection() {
                 >
                   {copied ? (
                     <>
-                      <Check className="size-3 sm:size-4" />
+                      <Check className="size-3 sm:size-4" aria-hidden="true" />
                       <span className="hidden xs:inline">Copied!</span>
                       <span className="xs:hidden">✓</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="size-3 sm:size-4" />
+                      <Copy className="size-3 sm:size-4" aria-hidden="true" />
                       <span className="hidden xs:inline">Copy</span>
                     </>
                   )}
@@ -79,7 +79,7 @@ export default function JsonOutputSection() {
           ) : (
             <div className="flex items-center justify-center h-[250px] sm:h-[350px] lg:h-[400px] text-muted-foreground px-4">
               <div className="text-center space-y-2">
-                <Code2 className="size-10 sm:size-12 mx-auto opacity-20" />
+                <Code2 className="size-10 sm:size-12 mx-auto opacity-20" aria-hidden="true" />
                 <p className="text-xs sm:text-sm">
                   Your TypeScript type will appear here
                 </p>
