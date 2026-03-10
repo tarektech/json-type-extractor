@@ -1,14 +1,14 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+
+const baseUrl = "https://json-type-extractor.vercel.app";
+const lastModified = new Date("2026-03-11T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://json-type-extractor.vercel.app';
-  const currentDate = new Date();
-
   return [
     {
       url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
+      lastModified,
+      changeFrequency: "weekly",
       priority: 1,
     },
   ];
