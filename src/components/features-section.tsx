@@ -10,8 +10,8 @@ export default function FeaturesSection() {
   return (
     <div className='mt-8 sm:mt-12 grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4'>
     <Card className="text-center p-4 sm:p-6 bg-card/30 backdrop-blur-sm">
-    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10">
-      <Wand2 className="size-5 sm:size-6 text-primary" />
+    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10" aria-hidden="true">
+      <Wand2 className="size-5 sm:size-6 text-primary" aria-hidden="true" />
     </div>
     <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">
       Instant Conversion
@@ -21,8 +21,8 @@ export default function FeaturesSection() {
     </p>
   </Card>
   <Card className="text-center p-4 sm:p-6 bg-card/30 backdrop-blur-sm">
-    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10">
-      <Code2 className="size-5 sm:size-6 text-primary" />
+    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10" aria-hidden="true">
+      <Code2 className="size-5 sm:size-6 text-primary" aria-hidden="true" />
     </div>
     <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">
       Smart Inference
@@ -32,8 +32,8 @@ export default function FeaturesSection() {
     </p>
   </Card>
   <Card className="text-center p-4 sm:p-6 bg-card/30 backdrop-blur-sm">
-    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10">
-      <Copy className="size-5 sm:size-6 text-primary" />
+    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10" aria-hidden="true">
+      <Copy className="size-5 sm:size-6 text-primary" aria-hidden="true" />
     </div>
     <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">
       One-Click Copy
@@ -43,8 +43,8 @@ export default function FeaturesSection() {
     </p>
   </Card>
   <Card className="text-center p-4 sm:p-6 bg-card/30 backdrop-blur-sm">
-    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10">
-      <Moon className="size-5 sm:size-6 text-primary" />
+    <div className="mx-auto mb-2 sm:mb-3 flex size-10 sm:size-12 items-center justify-center rounded-full bg-primary/10" aria-hidden="true">
+      <Moon className="size-5 sm:size-6 text-primary" aria-hidden="true" />
     </div>
     <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">
       Dark Mode
