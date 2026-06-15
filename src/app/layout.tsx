@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ConvertTypeProvider } from '@/components/convertProvider';
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -128,6 +129,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ConvertTypeProvider>{children}</ConvertTypeProvider>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
